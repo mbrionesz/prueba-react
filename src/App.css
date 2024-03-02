@@ -1,0 +1,14 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 4rem;
+  text-align: center;
+}
+
+.content {
+  margin: 30px;
+}
+
+.search-content {
+  margin: 30px;
+}
