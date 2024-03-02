@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import Buscador from './buscador';
 
-// Datos simulados basados en la estructura de la API de feriados
+// Datos simulados basados en la estructura de la API de feriados, sirve tambien cuando la API deja de funcionar entra este como respaldo.
 const datosSimulados = [
   { date: "2024-01-01", title: "Año Nuevo", type: "Civil", inalienable: true, extra: "Civil e Irrenunciable" },
   { date: "2024-03-29", title: "Viernes Santo", type: "Religioso", inalienable: false, extra: "Religioso" },
   { date: "2024-03-30", title: "Sábado Santo", type: "Religioso", inalienable: false, extra: "Religioso" },
-  { date: "2024-05-01", title: "Día Nacional del Trabajo", type: "Civil", inalienable: true, extra: "Civil e Irrenunciable" },
 ];
 
 const MiApi = ({busqueda}) => {
@@ -14,18 +13,18 @@ const MiApi = ({busqueda}) => {
   
 
   // Logica de la API de feriados
-  /*
+  
   useEffect(() => {
     const fetchApiData = async () => {
-      const response = await fetch('URL_DE_TU_API');
+      const response = await fetch('https://api.victorsanmartin.com/feriados/en.json');
       const json = await response.json();
       setDatos(json.data); // Actualizaría el estado con los datos de la API
     };
 
-    // Descomentar la siguiente línea cuando la API esté lista para ser consumida
-    // fetchApiData();
+    // Descomentar la siguiente línea cuando la API esté lista para ser consumida (API A PRODUCCION)
+     fetchApiData();
   }, []);
-  */
+  
 
   // Filtrado basado en 'busqueda'
   const datosFiltrados = datos.filter((dato) =>
